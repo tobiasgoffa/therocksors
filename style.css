@@ -334,3 +334,66 @@ footer {
 #profiltitle{
   padding-top: 50px;
 }
+/* HAMBURGER – skrytý na PC */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: var(--accent-gold);
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* MOBILNÉ MENU – skryté defaultne */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--bg-alt);
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.mobile-menu a {
+  padding: 0.8rem 0;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+/* MOBILNÁ VERZIA */
+@media (max-width: 768px) {
+
+  /* skryť desktop menu */
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  /* logo hore */
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  /* zobraziť hamburger */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  /* mobilné menu po otvorení */
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+}
