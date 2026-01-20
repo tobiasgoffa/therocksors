@@ -12,17 +12,15 @@
     <header>
         <nav>
 
-        <!-- LOGO -->
         <div class="logo">
             <img src="logo.png" alt="The Rocksors Logo">
             <span>The Rocksors</span>
         </div>
 
-        <!-- DESKTOP MENU -->
         <ul class="nav-left">
             <li><a href="index.html">Domov</a></li>
             <li><a href="index.html#about">O kapele</a></li>
-            <li><a href="index.html#music">Hudba</a></li>
+            <li><a href="index.html#setlist">Setlist</a></li>
             <li><a href="index.html#news">Novinky</a></li>
         </ul>
 
@@ -33,14 +31,12 @@
             <li><a href="index.html#contact">Kontakt</a></li>
         </ul>
 
-        <!-- HAMBURGER -->
         <div class="hamburger">☰</div>
 
-        <!-- MOBILNÉ MENU -->
         <div class="mobile-menu">
             <a href="index.html#home">Domov</a>
             <a href="index.html#about">O kapele</a>
-            <a href="index.html#music">Hudba</a>
+            <a href="index.html#setlist">Setlist</a>
             <a href="index.html#shows">Koncerty</a>
             <a href="index.html#news">Novinky</a>
             <a href="index.html#gallery">Galéria</a>
@@ -52,9 +48,9 @@
     </header>
 
     <section>
-        <h2 id="profiltitle">Kubo Hanzel</h2>
+        <h2 id="profiltitle">Jakub "Kubo" Hanzel</h2>
 
-        <img src="kubo.jpg" alt="Kubo Hanzel" style="width:300px; border-radius:10px; margin-bottom:1rem;">
+        <img src="kubo2.jpeg" alt="Kubo Hanzel" style="width:300px; border-radius:10px; margin-bottom:1rem;">
 
         <p>Gitarista s moderným rockovým zvukom, ktorý dopĺňa energiu a dynamiku kapely. Jeho štýl kombinuje melodické linky s tvrdšími riffmi.</p>
 
@@ -64,8 +60,8 @@
         <h3>Obľúbené kapely</h3>
         <ul>
             <li>Linkin Park</li>
-            <li>Breaking Benjamin</li>
-            <li>Three Days Grace</li>
+            <li>Die Toten Hosen</li>
+            <li>Skillet</li>
         </ul>
 
         <a href="profily.html" class="btn">Späť na profily</a>
@@ -79,7 +75,6 @@ hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 });
 
-// keď klikneš na odkaz → menu sa zavrie
 mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
         mobileMenu.classList.remove("active");

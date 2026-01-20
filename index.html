@@ -14,17 +14,15 @@
 <header>
     <nav>
 
-        <!-- LOGO -->
         <div class="logo">
             <img src="logo.png" alt="The Rocksors Logo">
             <span>The Rocksors</span>
         </div>
 
-        <!-- DESKTOP MENU -->
         <ul class="nav-left">
             <li><a href="index.html">Domov</a></li>
             <li><a href="index.html#about">O kapele</a></li>
-            <li><a href="index.html#music">Hudba</a></li>
+            <li><a href="index.html#setlist">Setlist</a></li>
             <li><a href="index.html#news">Novinky</a></li>
         </ul>
 
@@ -35,14 +33,12 @@
             <li><a href="index.html#contact">Kontakt</a></li>
         </ul>
 
-        <!-- HAMBURGER -->
         <div class="hamburger">☰</div>
 
-        <!-- MOBILNÉ MENU -->
         <div class="mobile-menu">
             <a href="index.html#home">Domov</a>
             <a href="index.html#about">O kapele</a>
-            <a href="index.html#music">Hudba</a>
+            <a href="index.html#setlist">Setlist</a>
             <a href="index.html#shows">Koncerty</a>
             <a href="index.html#news">Novinky</a>
             <a href="index.html#gallery">Galéria</a>
@@ -55,7 +51,6 @@
 
 <main>
 
-    <!-- HERO -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -64,19 +59,29 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
         <h2>O kapele</h2>
-        <p>The Rocksors vznikli na začiatku roku 2025 vo Vrútkach...</p>
+        <p>The Rocksors vznikli na začiatku roku 2025 vo Vrútkach. Spája nás láska k rocku, elektronike 
+            a energii Linkin Parku. Na pódiu ideme naplno a chceme, aby každý koncert bol zážitok.
+        </p>
     </section>
 
-    <!-- MUSIC -->
-    <section id="music">
-        <h2>Hudba</h2>
-        <p>Náš setlist je plný energie...</p>
+    <section id="setlist">
+        <h2>Setlist</h2>
+            <p>Náš setlist je plný energie a obľúbených hitov. Inšpirujeme sa Linkin Park, Evanescence a System Of A Down.</p>
+            <h3>Setlist:</h3>
+            <ol>
+                <li>What I've Done (Linkin Park)</li>
+                <li>Emptiness Machine (Linkin Park)</li>
+                <li>Cut The Bridge (Linkin Park)</li>
+                <li>Papercut (Linkin Park)</li>
+                <li>In the End (Linkin Park)</li>
+                <li>One Step Closer (Linkin Park)</li>
+                <li>Bring Me To Life (Evanescence)</li>
+                <li>Aerials (System Of A Down)</li>
+            </ol>
     </section>
 
-    <!-- SHOWS -->
     <section id="shows">
         <h2>Koncerty</h2>
         <div class="show">
@@ -85,16 +90,17 @@
         </div>
     </section>
 
-    <!-- NEWS -->
     <section id="news">
         <h2>Novinky</h2>
         <article>
             <h3>Ako vznikol názov The Rocksors</h3>
-            <p>Hľadali sme niečo úderné...</p>
+            <p>Hľadali sme niečo úderné, moderné a zapamätateľné. Naša prvá bicia súprava sa skladala z 
+                polorozpadnutého snare bubna, krivej hi-hat, jedného zalepeného tomu a neoriginálneho stojanu 
+                na činel pozváraného z roxorov. Práve tento stojan nás inšpiroval k údernému názvu "The Rocksors".
+            </p>
         </article>
     </section>
 
-    <!-- GALLERY -->
     <section id="gallery">
         <h2>Galéria</h2>
         <div class="gallery-grid">
@@ -104,7 +110,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Ozvi sa nám alebo sleduj kapelu...</p>
@@ -125,14 +130,12 @@ hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 });
 
-// keď klikneš na odkaz → menu sa zavrie
 mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
         mobileMenu.classList.remove("active");
     });
 });
 </script>
-
 
 </body>
 </html>

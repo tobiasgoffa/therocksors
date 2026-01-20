@@ -11,44 +11,38 @@
 
     <header>
         <nav>
+            <div class="logo">
+                <img src="logo.png" alt="The Rocksors Logo">
+                <span>The Rocksors</span>
+            </div>
 
-        <!-- LOGO -->
-        <div class="logo">
-            <img src="logo.png" alt="The Rocksors Logo">
-            <span>The Rocksors</span>
-        </div>
+            <ul class="nav-left">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="index.html#about">O kapele</a></li>
+                <li><a href="index.html#setlist">Setlist</a></li>
+                <li><a href="index.html#news">Novinky</a></li>
+            </ul>
 
-        <!-- DESKTOP MENU -->
-        <ul class="nav-left">
-            <li><a href="index.html">Domov</a></li>
-            <li><a href="index.html#about">O kapele</a></li>
-            <li><a href="index.html#music">Hudba</a></li>
-            <li><a href="index.html#news">Novinky</a></li>
-        </ul>
+            <ul class="nav-right">
+                <li><a href="profily.html">Profily</a></li>
+                <li><a href="index.html#shows">Koncerty</a></li>
+                <li><a href="index.html#gallery">Galéria</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
 
-        <ul class="nav-right">
-            <li><a href="profily.html">Profily</a></li>
-            <li><a href="index.html#shows">Koncerty</a></li>
-            <li><a href="index.html#gallery">Galéria</a></li>
-            <li><a href="index.html#contact">Kontakt</a></li>
-        </ul>
+            <div class="hamburger">☰</div>
 
-        <!-- HAMBURGER -->
-        <div class="hamburger">☰</div>
-
-        <!-- MOBILNÉ MENU -->
-        <div class="mobile-menu">
-            <a href="index.html#home">Domov</a>
-            <a href="index.html#about">O kapele</a>
-            <a href="index.html#music">Hudba</a>
-            <a href="index.html#shows">Koncerty</a>
-            <a href="index.html#news">Novinky</a>
-            <a href="index.html#gallery">Galéria</a>
-            <a href="profily.html">Profily</a>
-            <a href="index.html#contact">Kontakt</a>
-        </div>
-
-    </nav>
+            <div class="mobile-menu">
+                <a href="index.html#home">Domov</a>
+                <a href="index.html#about">O kapele</a>
+                <a href="index.html#setlist">Setlist</a>
+                <a href="index.html#shows">Koncerty</a>
+                <a href="index.html#news">Novinky</a>
+                <a href="index.html#gallery">Galéria</a>
+                <a href="profily.html">Profily</a>
+                <a href="index.html#contact">Kontakt</a>
+            </div>
+        </nav>
     </header>
 
     <section id="profiles">
@@ -58,13 +52,13 @@
 
             <a href="anicka.html" class="profile-card">
                 <img src="anicka.jpg" alt="Anna Sára Goffová">
-                <h3>Anna Sára Goffová</h3>
+                <h3>Anička "Ani" Goffová</h3>
                 <p>Spev</p>
             </a>
 
             <a href="ado.html" class="profile-card">
                 <img src="ado.jpg" alt="Aďo Tabak">
-                <h3>Aďo Tabak</h3>
+                <h3>Andrej "Aďo" Tabak</h3>
                 <p>Gitara & Spev</p>
             </a>
 
@@ -86,13 +80,13 @@
                 <p>Basgitara</p>
             </a>
             <a href="kubo.html" class="profile-card">
-                <img src="kubo.jpg" alt="Kubo">
-                <h3>Kubo Hanzel</h3>
+                <img src="kubo2.jpeg" alt="Kubo">
+                <h3>Jakub "Kubo" Hanzel</h3>
                 <p>Sólová & rytmická gitara</p>
             </a>
-
         </div>
     </section>
+
     <script>
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -102,7 +96,6 @@ hamburger.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 });
 
-// keď klikneš na odkaz → menu sa zavrie
 mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
         mobileMenu.classList.remove("active");
@@ -110,34 +103,35 @@ mobileLinks.forEach(link => {
 });
 </script>
 
-
     <footer>
-    <div class="social-links">
+        <div class="social-links">
 
-        <div class="icon-wrapper">
-            <a href="https://www.instagram.com/the.rocksors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-               target="_blank" aria-label="Instagram">
-                <img src="Instagram.png" alt="Instagram logo" width="32" height="32">
-                <span class="tooltip">Instagram</span>
-            </a>
+            <div class="icon-wrapper">
+                <a href="https://www.instagram.com/the.rocksors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" aria-label="Instagram">
+                    <img src="Instagram.png" alt="Instagram logo" width="32" height="32">
+                    <span class="tooltip">Instagram</span>
+                </a>
+            </div>
+
+            <div class="icon-wrapper">
+                <a href="https://www.tiktok.com/@the.rocksors?_t=ZN-8vX9RhfFBnK&_r=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnUWOmZL4Udm410aDrkvFfxXJJc2Dpf5k5AHvmokRLIJ9qXQRpq5x-hWS59gg_aem_XC7pL8v_4Z0wiOM6HLVPeA" target="_blank" aria-label="TikTok">
+                    <img src="tiktok.png" alt="TikTok logo" width="32" height="32">
+                    <span class="tooltip">TikTok</span>
+                </a>
+            </div>
+
+            <div class="icon-wrapper">
+                <a href="Estefacebooknemame.sk" aria-label="Facebook">
+                    <img src="Facebook.png" alt="Facebook logo" width="32" height="32">
+                    <span class="tooltip">Facebook</span>
+                </a>
+            </div>
+
         </div>
-
-        <div class="icon-wrapper">
-            <a href="https://www.tiktok.com/@the.rocksors?_t=ZN-8vX9RhfFBnK&_r=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnUWOmZL4Udm410aDrkvFfxXJJc2Dpf5k5AHvmokRLIJ9qXQRpq5x-hWS59gg_aem_XC7pL8v_4Z0wiOM6HLVPeA" target="_blank" aria-label="TikTok">
-                <img src="tiktok.png" alt="TikTok logo" width="32" height="32">
-                <span class="tooltip">TikTok</span>
-            </a>
-        </div>
-
-        <div class="icon-wrapper">
-            <a href="Estefacebooknemame.sk" aria-label="Facebook">
-                <img src="Facebook.png" alt="Facebook logo" width="32" height="32">
-                <span class="tooltip">Facebook</span>
-            </a>
-        </div>
-
-    </div>
-    <p>© 2025 The Rocksors – všetky práva vyhradené</p>
-</footer>
+            <p>
+                © 2025 The Rocksors – všetky práva vyhradené
+            </p>
+    </footer>
 </body>
 </html>
