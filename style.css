@@ -74,6 +74,7 @@ nav {
   font-family: var(--font-logo);
   font-size: 2rem;
   color: var(--text);
+  text-decoration: none;
 }
 
 .logo img {
@@ -201,13 +202,18 @@ form label {
 }
 
 .gallery-item {
-  background-color: #1a1a1a;
+  width: 100%;
+  height: 250px; 
+  overflow: hidden;
+  border-radius: 8px;
   border: 1px solid #333;
-  padding: 2rem;
-  text-align: center;
-  color: var(--accent-gold-soft);
-  font-weight: bold;
-  text-transform: uppercase;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
 }
 
 .show {
@@ -335,7 +341,6 @@ footer {
 #profiltitle{
   padding-top: 50px;
 }
-/* HAMBURGER – skrytý na PC */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -344,7 +349,6 @@ footer {
   z-index: 2000;
 }
 
-/* MOBILNÉ MENU – skryté defaultne */
 .mobile-menu {
   display: none;
   flex-direction: column;
