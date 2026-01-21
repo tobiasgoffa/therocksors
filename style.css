@@ -314,6 +314,20 @@ footer {
   font-size: 1.4rem;
   color: var(--text-muted);
 }
+.hero-content img {
+  max-width: 80vw;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .hero-content img {
+    max-width: 90vw;
+  }
+}
+
+
 .profile-card {
   background-color: #1a1a1a;
   border: 1px solid #333;
