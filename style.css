@@ -323,6 +323,7 @@ footer {
   text-decoration: none;
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 330px;
 }
 
 .profile-card img {
@@ -410,4 +411,10 @@ h3 {
 }
 ol{
   padding-left: 30px;
+}
+.kapely {
+  padding-bottom: 50px;
+}
+#hosting{
+margin-top: 50px;
 }
