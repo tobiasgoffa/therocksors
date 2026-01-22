@@ -154,7 +154,7 @@
 
     </div>
 
-    <p>© 2025 The Rocksors – všetky práva vyhradené</p>
+    <p>© <span id="year"></span> The Rocksors – všetky práva vyhradené</p>
 </footer>
 
 <script>
@@ -171,7 +171,11 @@ mobileLinks.forEach(link => {
         mobileMenu.classList.remove("active");
     });
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+
 
 </body>
 </html>
