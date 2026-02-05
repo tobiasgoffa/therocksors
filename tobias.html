@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobiáš – Profil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+        <a href="index.html" class="logo">
+            <img src="logoW.svg" alt="The Rocksors Logo">
+        </a>
+
+        <ul class="nav-left">
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="index.html#about">O kapele</a></li>
+            <li><a href="index.html#setlist">Setlist</a></li>
+            <li><a href="index.html#news">Novinky</a></li>
+        </ul>
+
+        <ul class="nav-right">
+            <li><a href="profily.html">Profily</a></li>
+            <li><a href="index.html#shows">Koncerty</a></li>
+            <li><a href="index.html#gallery">Galéria</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+
+        <div class="hamburger">☰</div>
+
+        <div class="mobile-menu">
+            <a href="index.html#home">Domov</a>
+            <a href="index.html#about">O kapele</a>
+            <a href="index.html#setlist">Setlist</a>
+            <a href="index.html#shows">Koncerty</a>
+            <a href="index.html#news">Novinky</a>
+            <a href="index.html#gallery">Galéria</a>
+            <a href="profily.html">Profily</a>
+            <a href="index.html#contact">Kontakt</a>
+        </div>
+
+    </nav>
+    </header>
+    <section>
+        <h2 id="profiltitle">Tobiáš</h2>
+
+        <img src="tobias.jpg" alt="Tobiáš" style="width:300px; border-radius:10px; margin-bottom:1rem;">
+
+<p>Narodil sa v Martine a už odmalička ho hudba zaujímala. Rodičom pílil nervy toľko, až ho prihlásili do ZUŠky na klavír. Prechádzal si viacerými krízami, nekoľkokrát chcel klavír zavesiť na klinec, ale vždy ho niečo udržalo.</p>
+
+<p>Taký rozsiahlejší záujem o hudbu prepukol asi v roku 2021, keď sa cez lockdown začal učiť na ukulele, ktoré neskôr vymenil za gitaru. Zrazu vnímal hudbu inak – už si vedel sadnúť za klavír, poskladať akordy a zahrať si ľubovoľnú pesničku. V súčasnosti hrá vo viacerých hudobných zoskupeniach, najmä v punkovej kapele "Chaos v Rytme" a rockovej kapele "The Rocksors".</p>
+
+        <h3>Aparát</h3>
+        <ul class="kapely">
+            <li>Medeli SP-A500</li>
+            <li>Medeli M331</li>
+            <li>Petrof pianino (1975)</li>
+            <li>KUSTOM DE50</li>
+            <li>Random 50W basové kombo</li>
+        </ul>
+
+        <h3>Vysnívaný aparát</h3>
+        <ul class="kapely">
+            <li>Nord Stage 4</li>
+        </ul>
+
+        <h3>Obľúbené kapely</h3>
+        <ul class="kapely">
+            <li>Linkin Park</li>
+            <li>Horkýže Slýže</li>
+            <li>Marhule</li>
+        </ul>
+
+        <a href="profily.html" class="btn">Späť na profily</a>
+    </section>
+    <script>
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+});
+
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+    });
+});
+</script>
+
+    <footer>
+    <div class="social-links">
+
+        <div class="icon-wrapper">
+            <a href="https://www.instagram.com/the.rocksors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+               target="_blank" aria-label="Instagram">
+                <img src="Instagram.png" alt="Instagram logo" width="32" height="32">
+                <span class="tooltip">Instagram</span>
+            </a>
+        </div>
+
+        <div class="icon-wrapper">
+            <a href="https://www.tiktok.com/@the.rocksors?_t=ZN-8vX9RhfFBnK&_r=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnUWOmZL4Udm410aDrkvFfxXJJc2Dpf5k5AHvmokRLIJ9qXQRpq5x-hWS59gg_aem_XC7pL8v_4Z0wiOM6HLVPeA" target="_blank" aria-label="TikTok">
+                <img src="tiktok.png" alt="TikTok logo" width="32" height="32">
+                <span class="tooltip">TikTok</span>
+            </a>
+        </div>
+
+        <div class="icon-wrapper">
+            <a href="Estefacebooknemame.sk" aria-label="Facebook">
+                <img src="Facebook.png" alt="Facebook logo" width="32" height="32">
+                <span class="tooltip">Facebook</span>
+            </a>
+        </div>
+
+    </div>
+
+    <p>© 2025 The Rocksors – všetky práva vyhradené</p>
+</footer>
+</body>
+</html>

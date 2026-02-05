@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songsterr – Profil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logoW.svg">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+        <a href="index.html" class="logo">
+            <img src="logoW.svg" alt="The Rocksors Logo">
+        </a>
+
+        <ul class="nav-left">
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="index.html#about">O kapele</a></li>
+            <li><a href="index.html#setlist">Setlist</a></li>
+            <li><a href="index.html#news">Novinky</a></li>
+        </ul>
+
+        <ul class="nav-right">
+            <li><a href="profily.html">Profily</a></li>
+            <li><a href="index.html#shows">Koncerty</a></li>
+            <li><a href="index.html#gallery">Galéria</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+
+        <div class="hamburger">☰</div>
+
+        <div class="mobile-menu">
+            <a href="index.html#home">Domov</a>
+            <a href="index.html#about">O kapele</a>
+            <a href="index.html#setlist">Setlist</a>
+            <a href="index.html#shows">Koncerty</a>
+            <a href="index.html#news">Novinky</a>
+            <a href="index.html#gallery">Galéria</a>
+            <a href="profily.html">Profily</a>
+            <a href="index.html#contact">Kontakt</a>
+        </div>
+
+    </nav>
+    </header>
+
+    <section>
+    <h2 id="profiltitle">Songsterr</h2>
+
+    <img src="songsterr.png" alt="Songsterr" style="width:300px; border-radius:10px; margin-bottom:1rem;">
+
+    <p>Hosťujúci bubeník, ktorý nikdy nezabudne tempo. Songsterr nás zachránil v období, keď sme nemali bubeníka a potrebovali sme niekoho, kto hrá presne, neúnavne a bez reptania. Je to člen, ktorý vždy vie, ako ide prechod, a nikdy nevynechá takt.</p>
+
+    <h3>Rola v kapele</h3>
+    <p>Bicie, metronóm, nekompromisný dohľad nad tempom.</p>
+
+    <h3>Obľúbené kapely</h3>
+    <ul class="kapely">
+        <li>Čokoľvek na 120 BPM</li>
+        <li>Čokoľvek s presným metronómom</li>
+        <li>Čokoľvek, čo má taby</li>
+    </ul>
+
+    <h3>Špecializácia</h3>
+    <p class="kapely">Pripomínanie, že hráme o dve sekundy pozadu. A keď sa pomýlime, on to bez milosti prezradí.</p>
+
+    <a href="profily.html" class="btn">Späť na profily</a>
+</section>
+
+    <script>
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+});
+
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+    });
+});
+</script>
+
+    <footer>
+    <div class="social-links">
+
+        <div class="icon-wrapper">
+            <a href="https://www.instagram.com/the.rocksors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+               target="_blank" aria-label="Instagram">
+                <img src="Instagram.png" alt="Instagram logo" width="32" height="32">
+                <span class="tooltip">Instagram</span>
+            </a>
+        </div>
+
+        <div class="icon-wrapper">
+            <a href="https://www.tiktok.com/@the.rocksors?_t=ZN-8vX9RhfFBnK&_r=1&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnUWOmZL4Udm410aDrkvFfxXJJc2Dpf5k5AHvmokRLIJ9qXQRpq5x-hWS59gg_aem_XC7pL8v_4Z0wiOM6HLVPeA" target="_blank" aria-label="TikTok">
+                <img src="tiktok.png" alt="TikTok logo" width="32" height="32">
+                <span class="tooltip">TikTok</span>
+            </a>
+        </div>
+
+        <div class="icon-wrapper">
+            <a href="Estefacebooknemame.sk" aria-label="Facebook">
+                <img src="Facebook.png" alt="Facebook logo" width="32" height="32">
+                <span class="tooltip">Facebook</span>
+            </a>
+        </div>
+
+    </div>
+
+    <p>© <span id="year"></span> The Rocksors – všetky práva vyhradené</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
