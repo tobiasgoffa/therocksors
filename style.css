@@ -240,6 +240,16 @@ footer {
   position: relative; 
   display: inline-block; 
 } 
+.icon-wrapper a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.instagram-name {
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+}
 .tooltip { 
   position: absolute; 
   top: -30px; 
