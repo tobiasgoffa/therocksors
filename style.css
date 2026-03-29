@@ -249,6 +249,9 @@ footer {
   color: #fff;
   font-size: 32px;
   line-height: 1;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-underline-offset: 0.2em;
 }
 .tooltip { 
   position: absolute; 
