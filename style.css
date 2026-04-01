@@ -213,10 +213,42 @@ form label {
 }
 
 .show {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
   background-color: #1a1a1a;
   border-left: 4px solid var(--accent-gold);
   padding: 1rem 1.5rem;
   margin-bottom: 1.5rem;
+}
+.show img,
+.show .show-poster {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.show-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+@media (min-width: 768px) {
+  .show {
+    grid-template-columns: minmax(260px, 360px) 1fr;
+  }
+  .show img,
+  .show .show-poster {
+    margin: 0;
+  }
+  .show-info {
+    justify-content: center;
+  }
 }
 
 footer {
