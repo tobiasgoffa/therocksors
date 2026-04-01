@@ -266,6 +266,21 @@ footer {
   position: relative;
   display: inline-block;
 }
+.personal-instagram {
+  display: block;
+  margin: 0.3rem 0;
+}
+.personal-instagram a {
+  gap: 0.45rem;
+  padding: 0.45rem 0.75rem;
+}
+.personal-instagram img {
+  width: 24px;
+  height: 24px;
+}
+.personal-instagram .instagram-name {
+  font-size: 0.9rem;
+}
 .icon-wrapper a {
   display: inline-flex;
   align-items: center;
