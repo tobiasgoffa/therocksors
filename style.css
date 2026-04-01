@@ -238,6 +238,38 @@ form label {
   gap: 0.55rem;
 }
 
+.show-summary {
+  display: block;
+  max-width: 300px;
+  margin: 0 0 1.5rem 0;
+  padding: 1rem 1.5rem;
+}
+
+.show-summary .show-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.show-summary .show-link img {
+  width: 100%;
+  max-width: 240px;
+  margin: 0;
+}
+
+.show-summary-text p {
+  margin: 0;
+  color: var(--text);
+}
+
+.show-summary-text p:last-child {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
 @media (min-width: 768px) {
   .show {
     grid-template-columns: minmax(260px, 360px) 1fr;
