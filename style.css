@@ -603,6 +603,11 @@ footer {
   color: var(--accent-gold);
   cursor: pointer;
   z-index: 2000;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger:active {
+  transform: scale(0.9);
 }
 
 .mobile-menu {
@@ -613,6 +618,10 @@ footer {
   padding: 1rem 0;
   text-align: center;
   border-top: 2px solid var(--accent-gold);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu a {
@@ -622,6 +631,7 @@ footer {
   font-weight: bold;
   letter-spacing: 0.1em;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 /* MOBILNÁ VERZIA */
@@ -638,6 +648,8 @@ footer {
     position: static;
     transform: none;
     font-size: 1.5rem;
+    flex: 1;
+    text-align: center;
   }
 
   .logo img {
@@ -647,20 +659,24 @@ footer {
   /* zobraziť hamburger */
   .hamburger {
     display: block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+
+  nav {
+    flex-direction: row;
+    padding: 0.3rem 0.5rem;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
   }
 
   /* mobilné menu po otvorení */
   .mobile-menu.active {
     display: flex;
-  }
-
-  nav {
-    flex-direction: column;
-    padding: 0.3rem;
-    height: auto;
+    opacity: 1;
+    transform: scaleY(1);
   }
 
   .mobile-menu {
@@ -669,6 +685,27 @@ footer {
 
   .mobile-menu a {
     padding: 0.3rem 0;
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .mobile-menu a:nth-child(1) { animation-delay: 0.05s; }
+  .mobile-menu a:nth-child(2) { animation-delay: 0.1s; }
+  .mobile-menu a:nth-child(3) { animation-delay: 0.15s; }
+  .mobile-menu a:nth-child(4) { animation-delay: 0.2s; }
+  .mobile-menu a:nth-child(5) { animation-delay: 0.25s; }
+  .mobile-menu a:nth-child(6) { animation-delay: 0.3s; }
+  .mobile-menu a:nth-child(7) { animation-delay: 0.35s; }
+  .mobile-menu a:nth-child(8) { animation-delay: 0.4s; }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 h3 {
