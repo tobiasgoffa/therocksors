@@ -543,6 +543,11 @@ footer {
   padding-top: 100px;
 }
 
+#gallery,
+.gallery-item {
+  scroll-margin-top: 150px;
+}
+
 @media (max-width: 768px) {
   .hero-content img {
     max-width: 90vw;
