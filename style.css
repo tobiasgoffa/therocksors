@@ -537,12 +537,23 @@ footer {
   margin: 0 auto 1rem auto;
   padding: 0;
 }
+#profiles,
+#profiltitle,
+#gallery {
+  padding-top: 100px;
+}
+
 @media (max-width: 768px) {
   .hero-content img {
     max-width: 90vw;
   }
-}
 
+  #profiles,
+  #profiltitle,
+  #gallery {
+    padding-top: 150px;
+  }
+}
 
 .profile-card {
   background-color: #1a1a1a;
@@ -570,7 +581,7 @@ footer {
   padding-top: 100px;
 }
 #profiltitle{
-  padding-top: 50px;
+  padding-top: 100px;
 }
 .hamburger {
   display: none;
