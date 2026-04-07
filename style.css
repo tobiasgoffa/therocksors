@@ -645,16 +645,16 @@ footer {
 
   nav {
     flex-direction: column;
-    padding: 0.65rem;
+    padding: 0.5rem;
     height: auto;
   }
 
   .mobile-menu {
-    padding: 0.65rem 0;
+    padding: 0.5rem 0;
   }
 
   .mobile-menu a {
-    padding: 0.55rem 0;
+    padding: 0.4rem 0;
   }
 }
 h3 {
