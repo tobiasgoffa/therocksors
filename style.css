@@ -26,7 +26,7 @@ body {
 
 nav {
   background-color: var(--bg-alt);
-  padding: 2rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,13 +67,13 @@ nav {
   align-items: center;
   gap: 0.6rem;
   font-family: var(--font-logo);
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--text);
   text-decoration: none;
 }
 
 .logo img {
-  height: 80px;
+  height: 60px;
   width: auto;
 }
 
@@ -645,16 +645,16 @@ footer {
 
   nav {
     flex-direction: column;
-    padding: 0.5rem;
+    padding: 0.3rem;
     height: auto;
   }
 
   .mobile-menu {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
   }
 
   .mobile-menu a {
-    padding: 0.4rem 0;
+    padding: 0.3rem 0;
   }
 }
 h3 {
