@@ -114,6 +114,23 @@ mobileLinks.forEach(link => {
     </footer>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Hide/show header on scroll for mobile
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling down
+            header.classList.add('hidden');
+        } else {
+            // Scrolling up
+            header.classList.remove('hidden');
+        }
+        lastScrollY = window.scrollY;
+    }
+});
 </script>
 
 </body>
