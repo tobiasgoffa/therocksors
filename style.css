@@ -689,7 +689,7 @@ footer {
   }
 
   .logo img {
-    height: 64px;
+    height: 53px;
   }
 
   .hamburger {
@@ -698,16 +698,16 @@ footer {
     right: 0.8rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   nav {
     flex-direction: row;
-    padding: 1rem 1.2rem;
-    min-height: 76px;
+    padding: 1.3rem 1.3rem;
+    min-height: 56px;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
     overflow: visible;
   }
 
