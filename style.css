@@ -35,7 +35,6 @@ nav {
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 .hamburger {
@@ -43,7 +42,6 @@ nav {
   cursor: pointer;
   color: var(--accent-gold);
   font-size: 2rem;
-  transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 .nav-left,
@@ -84,7 +82,6 @@ nav {
 .logo img {
   height: 80px;
   width: auto;
-  transition: height 0.3s ease, transform 0.3s ease;
 }
 
 nav::after {
@@ -104,21 +101,6 @@ nav::after {
 }
 
 header {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-}
-
-header.scrolled nav {
-  padding: 1rem 1.2rem;
-  background-color: rgba(18, 18, 18, 0.96);
-}
-
-header.scrolled .logo img {
-  height: 64px;
-}
-
-header.scrolled .hamburger {
-  font-size: 1.6rem;
-  transform: scale(0.95);
 }
 
 .nav-links a {
@@ -707,7 +689,7 @@ footer {
   }
 
   .logo img {
-    height: 70px;
+    height: 64px;
   }
 
   .hamburger {
@@ -716,13 +698,13 @@ footer {
     right: 0.8rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   nav {
     flex-direction: row;
-    padding: 1.4rem 1.2rem;
-    min-height: 84px;
+    padding: 1rem 1.2rem;
+    min-height: 76px;
     justify-content: center;
     align-items: center;
     position: relative;
