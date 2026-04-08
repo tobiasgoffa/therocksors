@@ -165,20 +165,25 @@ mobileLinks.forEach(link => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Hide/show header on scroll for mobile
-let lastScrollY = window.scrollY;
 const header = document.querySelector('header');
+let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
     if (window.innerWidth <= 768) {
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            // Scrolling down
-            header.classList.add('hidden');
-        } else {
-            // Scrolling up
-            header.classList.remove('hidden');
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollY;
+
+        if (currentScrollY <= 50) {
+            header.classList.remove('scrolled');
+        } else if (delta > 10) {
+            header.classList.add('scrolled');
+        } else if (delta < -10) {
+            header.classList.remove('scrolled');
         }
-        lastScrollY = window.scrollY;
+
+        lastScrollY = currentScrollY;
+    } else {
+        header.classList.remove('scrolled');
     }
 });
 </script>
