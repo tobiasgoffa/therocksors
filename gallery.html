@@ -95,11 +95,8 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Zatvoriť">&times;</button>
-        <button id="lightbox-prev" class="lightbox-button prev" aria-label="Predchádzajúci obrázok">&#10094;</button>
-        <img class="lightbox-content" id="lightbox-img" alt="Zväčšený obrázok">
-        <div class="lightbox-counter" id="lightbox-counter">0 / 0</div>
-        <button id="lightbox-next" class="lightbox-button next" aria-label="Nasledujúci obrázok">&#10095;</button>
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
     </div>
 
 </main>
@@ -135,35 +132,11 @@
 </footer>
 
 <script>
-const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img')).map(img => {
-    const src = img.getAttribute('src');
-    return src.includes('/thumbs/') ? src.replace('/thumbs/', '/') : src;
-});
-let currentImageIndex = -1;
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-const lightboxCounter = document.getElementById('lightbox-counter');
-const prevButton = document.getElementById('lightbox-prev');
-const nextButton = document.getElementById('lightbox-next');
 
-function openLightbox(srcOrIndex) {
-    let index = -1;
-    if (typeof srcOrIndex === 'number') {
-        index = srcOrIndex;
-    } else {
-        index = galleryImages.indexOf(srcOrIndex);
-    }
-    if (index === -1) {
-        return;
-    }
-    showLightboxImage(index);
-}
-
-function showLightboxImage(index) {
-    const total = galleryImages.length;
-    currentImageIndex = ((index % total) + total) % total;
-    lightboxImg.src = galleryImages[currentImageIndex];
-    lightboxCounter.textContent = `${currentImageIndex + 1} / ${total}`;
+function openLightbox(src) {
+    lightboxImg.src = src;
     lightbox.style.display = 'flex';
 }
 
@@ -171,41 +144,10 @@ function closeLightbox() {
     lightbox.style.display = 'none';
 }
 
-function showPreviousImage(event) {
-    event?.stopPropagation();
-    showLightboxImage(currentImageIndex - 1);
-}
-
-function showNextImage(event) {
-    event?.stopPropagation();
-    showLightboxImage(currentImageIndex + 1);
-}
-
 lightbox.addEventListener('click', function(event) {
     if (event.target === this) {
         closeLightbox();
     }
-});
-
-prevButton.addEventListener('click', showPreviousImage);
-nextButton.addEventListener('click', showNextImage);
-
-document.addEventListener('keydown', function(event) {
-    if (lightbox.style.display !== 'flex') {
-        return;
-    }
-    if (event.key === 'ArrowLeft') {
-        showPreviousImage();
-    } else if (event.key === 'ArrowRight') {
-        showNextImage();
-    } else if (event.key === 'Escape') {
-        closeLightbox();
-    }
-});
-
-const thumbnailImages = document.querySelectorAll('.gallery-grid img');
-thumbnailImages.forEach((thumbnail, index) => {
-    thumbnail.addEventListener('click', () => openLightbox(index));
 });
 
 const hamburger = document.querySelector('.hamburger');

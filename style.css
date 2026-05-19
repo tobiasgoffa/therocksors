@@ -217,108 +217,26 @@ form label {
 }
 
 .lightbox-content {
-  max-width: calc(100vw - 12rem);
-  max-height: calc(100vh - 6rem);
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100vh - 4rem);
   width: auto;
   height: auto;
-  border-radius: 14px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
   display: block;
   margin: 0 auto;
 }
 
-.lightbox-close {
+.lightbox .close {
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  background: rgba(0, 0, 0, 0.55);
-  border: none;
   color: #fff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.lightbox-close:hover {
-  background: rgba(212, 175, 55, 0.95);
-  transform: scale(1.05);
-}
-
-.lightbox-counter {
-  position: absolute;
-  bottom: 1.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  background: rgba(0, 0, 0, 0.55);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  z-index: 10;
-}
-
-.lightbox-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.55);
+  background: transparent;
   border: none;
-  color: #fff;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  font-size: 2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.lightbox-button:hover {
-  background: rgba(212, 175, 55, 0.95);
-  transform: scale(1.05);
-}
-
-.lightbox-button.prev {
-  left: 1.2rem;
-}
-
-.lightbox-button.next {
-  right: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  .lightbox {
-    padding: 1rem;
-  }
-
-  .lightbox-content {
-    max-width: calc(100vw - 4rem);
-    max-height: calc(100vh - 4rem);
-  }
-
-  .lightbox-button {
-    width: 46px;
-    height: 46px;
-    font-size: 1.5rem;
-  }
-
-  .lightbox-button.prev {
-    left: 0.6rem;
-  }
-
-  .lightbox-button.next {
-    right: 0.6rem;
-  }
-}
-
-@media (min-width: 768px) {
   .nav-left,
   .nav-right {
     display: none;
