@@ -275,6 +275,18 @@ form label {
   right: 1rem;
 }
 
+.lightbox-counter {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
   .nav-left,
   .nav-right {

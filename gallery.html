@@ -98,6 +98,7 @@
         <span class="close" onclick="closeLightbox()">&times;</span>
         <button id="lightbox-prev" class="lightbox-button prev" aria-label="Predchádzajúci obrázok">&#10094;</button>
         <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-counter" class="lightbox-counter">0 / 0</div>
         <button id="lightbox-next" class="lightbox-button next" aria-label="Nasledujúci obrázok">&#10095;</button>
     </div>
 
@@ -142,12 +143,14 @@ const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img'))
 let currentImageIndex = -1;
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCounter = document.getElementById('lightbox-counter');
 const prevButton = document.getElementById('lightbox-prev');
 const nextButton = document.getElementById('lightbox-next');
 
 function loadImageByIndex(index) {
     const total = galleryImages.length;
     currentImageIndex = ((index % total) + total) % total;
+    if (lightboxCounter) lightboxCounter.textContent = `${currentImageIndex + 1} / ${total}`;
     const { thumb, full } = galleryImages[currentImageIndex];
     // show low-res immediately and start staged de-blur
     // clear any existing timers
