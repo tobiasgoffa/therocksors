@@ -217,6 +217,18 @@ nextButton.addEventListener('click', function(event) {
     showNextImage();
 });
 
+// Keyboard navigation: left/right arrows and Escape to close
+document.addEventListener('keydown', function(event) {
+    if (lightbox.style.display !== 'flex') return;
+    if (event.key === 'ArrowLeft') {
+        showPreviousImage();
+    } else if (event.key === 'ArrowRight') {
+        showNextImage();
+    } else if (event.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileLinks = document.querySelectorAll('.mobile-menu a');
