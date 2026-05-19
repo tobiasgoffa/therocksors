@@ -135,7 +135,9 @@
 
 <script>
 const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img')).map(img => {
-    return img.getAttribute('src').replace('galery/thumbs/', 'galery/');
+    const thumb = img.getAttribute('src'); // e.g. 'galery/thumbs/DSC_0001.jpg'
+    const full = thumb.replace('galery/thumbs/', 'galery/');
+    return { thumb, full };
 });
 let currentImageIndex = -1;
 const lightbox = document.getElementById('lightbox');
@@ -143,30 +145,58 @@ const lightboxImg = document.getElementById('lightbox-img');
 const prevButton = document.getElementById('lightbox-prev');
 const nextButton = document.getElementById('lightbox-next');
 
-function openLightbox(src) {
-    currentImageIndex = galleryImages.indexOf(src);
-    if (currentImageIndex === -1) {
-        currentImageIndex = 0;
-    }
-    lightboxImg.src = galleryImages[currentImageIndex];
+function loadImageByIndex(index) {
+    const total = galleryImages.length;
+    currentImageIndex = ((index % total) + total) % total;
+    const { thumb, full } = galleryImages[currentImageIndex];
+    // show low-res immediately and start staged de-blur
+    // clear any existing timers
+    clearTimeout(window._lbBlurTimer1);
+    clearTimeout(window._lbBlurTimer2);
+    lightboxImg.classList.remove('loading-blur-1', 'loading-blur-2', 'loading-blur-3');
+    lightboxImg.src = thumb;
     lightbox.style.display = 'flex';
+    // start with heaviest blur
+    lightboxImg.classList.add('loading-blur-3');
+    // step down blur levels over time (will be cleared if hi-res loads earlier)
+    window._lbBlurTimer1 = setTimeout(() => {
+        if (currentImageIndex >= 0) {
+            lightboxImg.classList.replace('loading-blur-3', 'loading-blur-2');
+        }
+    }, 180);
+    window._lbBlurTimer2 = setTimeout(() => {
+        if (currentImageIndex >= 0) {
+            lightboxImg.classList.replace('loading-blur-2', 'loading-blur-1');
+        }
+    }, 380);
+    // preload high-res and swap when ready
+    const hi = new Image();
+    hi.src = full;
+    hi.onload = () => {
+        // cancel staged timers
+        clearTimeout(window._lbBlurTimer1);
+        clearTimeout(window._lbBlurTimer2);
+        // still the same image?
+        if (currentImageIndex >= 0 && galleryImages[currentImageIndex].full === full) {
+            lightboxImg.src = full;
+            lightboxImg.classList.remove('loading-blur-1', 'loading-blur-2', 'loading-blur-3');
+        }
+    };
+}
+
+function openLightbox(src) {
+    // src may be full path (from onclick) or thumb; find matching index
+    let index = galleryImages.findIndex(it => it.full === src || it.thumb === src);
+    if (index === -1) index = 0;
+    loadImageByIndex(index);
 }
 
 function closeLightbox() {
     lightbox.style.display = 'none';
 }
 
-function showPreviousImage() {
-    if (currentImageIndex < 0) return;
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentImageIndex];
-}
-
-function showNextImage() {
-    if (currentImageIndex < 0) return;
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentImageIndex];
-}
+function showPreviousImage() { loadImageByIndex(currentImageIndex - 1); }
+function showNextImage() { loadImageByIndex(currentImageIndex + 1); }
 
 lightbox.addEventListener('click', function(event) {
     if (event.target === this) {

@@ -225,6 +225,18 @@ form label {
   margin: 0 auto;
 }
 
+.lightbox-content.loading-blur-3 {
+  filter: blur(12px);
+}
+
+.lightbox-content.loading-blur-2 {
+  filter: blur(8px);
+}
+
+.lightbox-content.loading-blur-1 {
+  filter: blur(4px);
+}
+
 .lightbox .close {
   position: absolute;
   top: 1.2rem;
